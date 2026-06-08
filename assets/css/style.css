@@ -1,0 +1,152 @@
+:root {
+    --main: #5932ea;
+    --main-dark: #351c99;
+    --soft: #f4f1ff;
+    --text: #202033;
+    --muted: #6b6f80;
+    --danger: #dc3545;
+    --success: #198754;
+    --warning: #d39e00;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: linear-gradient(135deg, #f8f7ff 0%, #eef4ff 100%);
+    min-height: 100vh;
+}
+
+.topbar {
+    background: linear-gradient(120deg, var(--main), var(--main-dark));
+    color: white;
+    padding: 28px 0;
+    box-shadow: 0 10px 25px rgba(52, 28, 153, 0.18);
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: 0 auto;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.subtitle { opacity: 0.9; margin-top: 6px; }
+
+.panel {
+    background: white;
+    margin-top: 28px;
+    padding: 24px;
+    border-radius: 22px;
+    box-shadow: 0 15px 35px rgba(37, 45, 91, 0.09);
+}
+
+.actions, .filters, .stats-grid {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.actions { justify-content: flex-end; }
+
+.btn {
+    border: 0;
+    border-radius: 12px;
+    padding: 11px 16px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+}
+
+.btn:hover { transform: translateY(-1px); box-shadow: 0 8px 18px rgba(0,0,0,.12); }
+.btn-primary { background: var(--main); color: white; }
+.btn-secondary { background: #e9e7f7; color: var(--main-dark); }
+.btn-danger { background: var(--danger); color: white; }
+.btn-warning { background: #ffc107; color: #332500; }
+.btn-light { background: white; color: var(--main-dark); }
+
+input, select {
+    width: 100%;
+    border: 1px solid #dfe2f1;
+    border-radius: 12px;
+    padding: 12px 14px;
+    font-size: 15px;
+    outline: none;
+    background: white;
+}
+
+input:focus, select:focus { border-color: var(--main); box-shadow: 0 0 0 3px rgba(89, 50, 234, .12); }
+
+.filters { margin: 20px 0; }
+.filters input { flex: 2 1 300px; }
+.filters select { flex: 1 1 190px; }
+
+.stats-grid { margin: 20px 0; }
+.stat-card {
+    flex: 1 1 180px;
+    background: var(--soft);
+    border-radius: 18px;
+    padding: 18px;
+}
+.stat-number { font-size: 30px; font-weight: 800; color: var(--main); }
+.stat-label { color: var(--muted); margin-top: 4px; }
+
+.table-wrap { overflow-x: auto; border-radius: 16px; border: 1px solid #eceef7; }
+table { width: 100%; border-collapse: collapse; background: white; }
+th, td { text-align: left; padding: 15px; border-bottom: 1px solid #eceef7; }
+th { background: #fafaff; color: var(--muted); font-size: 14px; text-transform: uppercase; letter-spacing: .04em; }
+tr:hover td { background: #fcfbff; }
+
+.badge {
+    display: inline-block;
+    border-radius: 999px;
+    padding: 7px 11px;
+    font-size: 13px;
+    font-weight: 800;
+}
+.badge-available { background: #dcfce7; color: #166534; }
+.badge-borrowed { background: #fee2e2; color: #991b1b; }
+
+.row-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.form-card { max-width: 680px; margin: 28px auto; }
+.form-group { margin-bottom: 16px; }
+.form-group label { display: block; font-weight: 800; margin-bottom: 7px; }
+.message {
+    display: none;
+    margin: 16px 0;
+    padding: 13px 15px;
+    border-radius: 12px;
+    font-weight: 700;
+}
+.message.error { display: block; background: #fee2e2; color: #991b1b; }
+.message.success { display: block; background: #dcfce7; color: #166534; }
+.empty { text-align: center; padding: 28px; color: var(--muted); }
+.book-info {
+    background: #fafaff;
+    border: 1px solid #eceef7;
+    border-radius: 16px;
+    padding: 18px;
+    margin: 16px 0;
+}
+
+@media (max-width: 720px) {
+    .nav-content { align-items: flex-start; flex-direction: column; }
+    .actions { justify-content: flex-start; }
+    th, td { padding: 12px 10px; }
+}
