@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Book</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="container nav-content"><div><div class="logo">Delete Book</div><div class="subtitle">Remove a record from MySQL</div></div><a class="btn btn-light" href="index.html">Back</a></div></header>
+<main class="container">
+    <section class="panel form-card">
+        <h1>Confirm Delete</h1>
+        <div id="formMessage" class="message"></div>
+        <div class="book-info" id="bookInfo">Loading book...</div>
+        <div class="actions"><a href="index.html" class="btn btn-secondary">Cancel</a><button id="deleteBtn" class="btn btn-danger">Delete Book</button></div>
+    </section>
+</main>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/delete-book.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="topbar"><div class="container nav-content"><div><div class="logo">Add New Book</div><div class="subtitle">Save a new record to MySQL</div></div><a class="btn btn-light" href="index.html">Back</a></div></header>
+<main class="container">
+    <section class="panel form-card">
+        <h1>Add Book</h1>
+        <div id="formMessage" class="message"></div>
+        <form id="addBookForm">
+            <div class="form-group"><label for="bookTitle">Book Title</label><input type="text" id="bookTitle" required></div>
+            <div class="form-group"><label for="bookAuthor">Author</label><input type="text" id="bookAuthor" required></div>
+            <div class="form-group"><label for="bookCategory">Category</label><input type="text" id="bookCategory" required placeholder="Example: Fiction, Science, Education"></div>
+            <div class="form-group"><label for="bookStatus">Status</label><select id="bookStatus"><option value="Available">Available</option><option value="Borrowed">Borrowed</option></select></div>
+            <div class="actions"><a href="index.html" class="btn btn-secondary">Cancel</a><button class="btn btn-primary" type="submit">Save Book</button></div>
+        </form>
+    </section>
+</main>
+<script src="assets/js/api.js"></script>
+<script src="assets/js/add-book.js"></script>
+</body>
+</html>

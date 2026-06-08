@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="topbar">
+    <div class="container nav-content">
+        <div>
+            <div class="logo">Library Dashboard</div>
+            <div class="subtitle">PHP + MySQL book management system</div>
+        </div>
+        <div class="actions">
+            <a class="btn btn-light" href="add-book.html">+ Add Book</a>
+            <button class="btn btn-danger" id="clearAllBtn">Clear Database</button>
+        </div>
+    </div>
+</header>
+
+<main class="container">
+    <section class="stats-grid">
+        <div class="stat-card"><div class="stat-number" id="totalBooks">0</div><div class="stat-label">Total Books</div></div>
+        <div class="stat-card"><div class="stat-number" id="availableBooks">0</div><div class="stat-label">Available</div></div>
+        <div class="stat-card"><div class="stat-number" id="borrowedBooks">0</div><div class="stat-label">Borrowed</div></div>
+    </section>
+
+    <section class="panel">
+        <h1>Book Records</h1>
+        <p class="subtitle" style="color:#6b6f80">All records are loaded from and saved into the MySQL database.</p>
+
+        <div class="filters">
+            <input type="text" id="searchInput" placeholder="Search by title, author, or ID">
+            <select id="categoryFilter"><option value="All">All categories</option></select>
+        </div>
+
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Book</th>
+                        <th>Author</th>
+                        <th>Category</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr><td colspan="5" class="empty">Loading books...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+</main>
+
+<script src="assets/js/api.js"></script>
+<script src="assets/js/index.js"></script>
+</body>
+</html>
